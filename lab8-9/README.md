@@ -1,15 +1,25 @@
 # Access preparation
 1. Створюємо новий сторедж аккаунт. В advanced конфігурації ставимо Enabled для Hierarchical namespace
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/storage.png)
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/storage_adv.png)
 2. Створюємо новий контейнер GEN2 з Container access level
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/container.png)
 3. Створюємо нову директорію всередині контейнера
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/directory.png)
 4. Переходимо в Azure Active Directory -> App registrations та створюємо нову registration
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/registration.png)
 5. Переходимо в створену registration в Certificates & secrets та створюємо новий client secret
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/client_secret.png)
 
 # Azure Databricks
 1. Створюємо та запускаємо Azure Databricks Service
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/databricks.png)
 2. Переходимо в clusters і створюємо кластер. В Claster mode обираємо Single node, в Databricks Runtime Version - 6.4
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/cluster.png)
 3. В кластері обираємо Libraries –> Install New –> Maven. Coordinates: ```com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.18```
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/maven.png)
 4. На сторінці Home вибираємо Create Notebook, створюємо Notebook на Python
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/python_net.png)
 5. В Python Notebook вставляємо код. Відповідні поля копіюємо з Azure Active Directory -> App registration -> Створений попередньо registartion.
 Копіюємо Application (client) ID та встаялємо в fs.azure.account.oauth2.client.id
 З Certificates & secrets копіюємо ID раніше створеного Client secret та вставляємо в fs.azure.account.oauth2.client.secret
@@ -34,6 +44,7 @@ display(dbutils.fs.ls('/mnt/bilous-dir'))
 ```  
 
 6. На сторінці Home вибираємо Create Notebook, створюємо Notebook на Scala
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/scala_net.png)
 7. В Scala Notebook вставляємо код. Знову вставляємо відповідні дані + дані для з'єднання з EventHub. Також витягуємо (і за потреби конвертуємо) відповідні поля з датасету
 
 ```
@@ -79,4 +90,10 @@ filtered.writeStream
 
 # Result
 1. Запускаємо Python notebook. Відкриваємо завантажений Microsoft Azure Storage Explorer -> subscription -> storage -> container -> directory. В директорії мають з'явитись метадані
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/python_start.png)
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/metadata.png)
 2. Запускаємо Scala notebook і паралельно посилаємо запит на запис даних в Eventhub. Через кілька секунд дані повинні з'явитись в директорії
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/scala_start.png)
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/data.png)
+![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab8-9/excel.png)
+
