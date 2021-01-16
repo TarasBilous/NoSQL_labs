@@ -26,5 +26,5 @@
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/postman.png)
 2. Перевіряємо чи дані записались в Event Hub (Event Hub -> Features –> Proccess Data –> Explore).
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/event-hub-data.png)
-3. Перевіряємо чи дані записались в Redis (Redis Chache -> Console > команда hgetAll ім'я каталогу, який вказаний в redis.map.name у файлі ```application.properties```).
+3. Перевіряємо чи дані записались в Redis (Redis Chache -> Console > команда hgetAll ім'я каталогу, який вказаний в redis.map.name у файлі ```application.properties```).  
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/redis-data.png)
