@@ -16,13 +16,13 @@
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/shared-access-policy.png)
 
 # Project Configuration
-1. В файлі ```SendDataEventHubImpl.java``` вставляємо наші назви Event Hub Namespace, Event Hub Instance та Primary key & Connection string-primary key з Shared access policy.
-2. В файлі ```SendDataConsoleImpl.java``` вставляємо в CACHE_KEY свій Primary з Redis Cache Instance Access keys, а в CACHE_HOSTNAME частину Secondary connection string.
+1. В файлі ```application.properties``` вставляємо наші назви Event Hub Namespace, Event Hub Instance та Primary key & Connection string-primary key з Shared access policy.
+2. В файлі ```application.properties``` вставляємо в redis.cache.key свій Primary з Redis Cache Instance Access keys, а в redis.cache.hostname частину Secondary connection string.
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/project-redis-configuration.png)
 3. Компілюємо і запускаємо проєкт.
 
 # Result
-1. В Postman посилаємо POST запит на ```localhost:9000/url``` з вибором стратегії (redis/eventHub) та лінкою на дані.
+1. В Postman посилаємо POST запит на ```localhost:9000/lab``` з вибором стратегії (redis/eventHub) та лінкою на дані.
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/postman.png)
 2. Перевіряємо чи дані записались в Event Hub (Event Hub -> Features –> Proccess Data –> Explore).
 ![alt text](https://github.com/TarasBilous/NoSQL_labs/blob/master/images/lab5/event-hub-data.png)
